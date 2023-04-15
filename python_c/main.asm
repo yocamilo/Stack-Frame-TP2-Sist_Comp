@@ -1,6 +1,8 @@
 segment .text
+
     global main
-main:
+
+multiply_floats:
     push ebp
     mov ebp,esp
 

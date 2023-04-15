@@ -1,6 +1,11 @@
 import requests
 import ctypes
 
+
+# Para activar el entorno 32bits: source myenv/bin/activate
+# Ejecutar el programa con: python3 py_request.py bdist_wheel --plat-name=linux_i686
+# Para hacerlo en 32 bits en myenv
+
 # URL de la API de CoinGecko
 url =   'https://api.coingecko.com/api/v3'
 
