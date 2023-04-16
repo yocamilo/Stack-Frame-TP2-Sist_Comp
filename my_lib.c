@@ -20,13 +20,13 @@ float cripto_to_change(float cripto_value_usd, float usd_to_change) {
     else if(sizeof(char*)){
         printf("C esta en 32 bits\n");
     }*/
-    printf("#################################################################");
+    printf("#################################################################\n");
     printf("C ## El valor de la criptomoneda es: %f\n", cripto_value_usd);
     printf("C ## El valor de USD al cambio elegido es: %f\n",usd_to_change);
 
     float result = multiply_floats(cripto_value_usd, usd_to_change);
     
     printf("C ## El valor de la cripto en la moneda seleccionada es: %f\n",result);
-    printf("#################################################################");
+    printf("#################################################################\n");
     return(result);
 }
