@@ -1,17 +1,5 @@
 import requests
-import ctypes
-import sys
 import subprocess
-
-
-# Para activar el entorno 32bits: source myenv/bin/activate
-# Ejecutar el programa con: python3 py_request.py bdist_wheel --plat-name=linux_i686
-# Para hacerlo en 32 bits en myenv
-if(sys.maxsize > 2**32):
-    print("Python esta en 64 bits")
-else:
-    print("Python esta en 32 bits")
-print("")
 
 # URL de la API de CoinGecko
 url =   'https://api.coingecko.com/api/v3'
@@ -73,13 +61,7 @@ response_coin   =   requests.get(url_coin, params={'app_id': app_id, 'symbols': 
 
 # Verificamos si las peticiones fueron exitosas
 if response.status_code ==  200 and response_coin.status_code   ==  200:
-
-
-
     data    =   response_coin.json()
-
-    # Cargar la biblioteca compartida
-    #mylib_calc   =   ctypes.CDLL('./mylib.so', mode=ctypes.RTLD_GLOBAL)
 
     # Definimos variable de tipo flotante donde se guarda el valor de la criptomoenda seleccionada en USD
     cripto_value    =   response.json()[currency_cripto]['usd']
@@ -92,17 +74,10 @@ if response.status_code ==  200 and response_coin.status_code   ==  200:
 
     print(cripto_value)
     print(usd_to_change)
-    print("Ejecutando el main")
-    subprocess.call(['echo',cripto_value_str,usd_to_change_str])
+    print("Ejecutando mylib")
     subprocess.call(['./mylib',cripto_value_str,usd_to_change_str])
     print("------------------")
 
-    # Definimos el tipo de retorno de la funcion de C "cripto_to_change"
-    #mylib_calc.cripto_to_change.restype   =   ctypes.c_float
-
-    # Llamamos a la funcion "cripto_to_change" de C
-    #conversion_value    =   mylib_calc.cripto_to_change(cripto_value, usd_to_change)
-    #print(conversion_value)
 else:
     print('Hubo un error en las peticiones a las APIs')
 

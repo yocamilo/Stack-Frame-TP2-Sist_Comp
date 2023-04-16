@@ -14,19 +14,19 @@ int main(int argc ,char **argv){
 }
 
 float cripto_to_change(float cripto_value_usd, float usd_to_change) {
-    if(sizeof(char*)==8){
+    /*if(sizeof(char*)==8){
         printf("C esta en 64 bits\n");    
     }
     else if(sizeof(char*)){
         printf("C esta en 32 bits\n");
-    }
-
-    printf("El valor de la criptomoneda es: %f\n", cripto_value_usd);
-    printf("El valor de USD al cambio elegido es: %f\n",usd_to_change);
+    }*/
+    printf("#################################################################");
+    printf("C ## El valor de la criptomoneda es: %f\n", cripto_value_usd);
+    printf("C ## El valor de USD al cambio elegido es: %f\n",usd_to_change);
 
     float result = multiply_floats(cripto_value_usd, usd_to_change);
     
-    printf("%f\n",result);
-
+    printf("C ## El valor de la cripto en la moneda seleccionada es: %f\n",result);
+    printf("#################################################################");
     return(result);
 }
