@@ -12,4 +12,4 @@ mylib: my_lib.c mult.o
 	$(CC) $(CFLAGS) mylib my_lib.c mult.o
 
 clean:
-	rm mylib
+	rm mylib mult.o
