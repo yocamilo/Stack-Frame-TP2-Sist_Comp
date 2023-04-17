@@ -72,8 +72,6 @@ if response.status_code ==  200 and response_coin.status_code   ==  200:
     cripto_value_str = str(cripto_value)
     usd_to_change_str = str(usd_to_change)
 
-    print(cripto_value)
-    print(usd_to_change)
     print("Ejecutando mylib")
     subprocess.call(['./mylib',cripto_value_str,usd_to_change_str])
     print("------------------")
