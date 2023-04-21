@@ -1,7 +1,7 @@
 CC=gcc
 ASM=nasm
 CFLAGS= -g -m32 -o
-AFLAGS= -f elf32 -o
+AFLAGS= -g -f elf32 -o
 
 all: mylib
 
